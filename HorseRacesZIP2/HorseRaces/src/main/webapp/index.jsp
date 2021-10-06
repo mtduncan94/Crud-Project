@@ -34,7 +34,7 @@
 
         </form>
         <br>
-        <form action = "get"><input type="text" name="ID" size = "7"/><input type= "submit" value="Find by ID"/></form>
+        <form action = "get"><input type="number" name="ID" size = "7" required/><input type= "submit" value="Find by ID"/></form>
         <h2>Add New Race: </h2>
         <form action = "addrace">
             <table >
@@ -46,9 +46,9 @@
                 </tr>
 
                 <tr>
-                    <td><input type="text" name="raceName" id="raceName" />
-                    <td><input type="text" name="trackName" id="trackName" />
-                    <td><input type="text" name="date" id="date" />
+                    <td><input type="text" name="raceName" id="raceName" required/>
+                    <td><input type="text" name="trackName" id="trackName" required/>
+                    <td><input type="text" name="date" id="date" required/>
                     <td>  <input type="submit" value ="Submit New Race" /></td>>
                 </tr>
             </table>
@@ -65,10 +65,10 @@
                 </tr>
 
                 <tr>
-                    <td><input type="text" name="ID" id="ID" size = "7"/>
-                    <td><input type="text" name="raceName" id="raceName" />
-                    <td><input type="text" name="trackName" id="trackName" />
-                    <td><input type="text" name="date" id="date" />
+                    <td><input type="number" name="ID" id="ID" size = "7" required/>
+                    <td><input type="text" name="raceName" id="raceName" required/>
+                    <td><input type="text" name="trackName" id="trackName" required/>
+                    <td><input type="date" name="date" id="date" required/>
                     <td><input type="submit" value="Update Race List"/></td>
                 </tr>
             </table>
@@ -76,7 +76,7 @@
         </form>	
         <h2>Delete Race By ID: </h2>
         <form action ="delete">
-            <input type="text" name= "ID" size = "7"/><input type="submit" value="Delete Race">
+            <input type="number" name= "ID" size = "7" required/><input type="submit" value="Delete Race">
         </form>
     </body>
 </html>
