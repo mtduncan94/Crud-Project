@@ -48,7 +48,7 @@
                 <tr>
                     <td><input type="text" name="raceName" id="raceName" required/>
                     <td><input type="text" name="trackName" id="trackName" required/>
-                    <td><input type="text" name="date" id="date" required/>
+                    <td><input type="date" name="date" id="date" required/>
                     <td>  <input type="submit" value ="Submit New Race" /></td>>
                 </tr>
             </table>
