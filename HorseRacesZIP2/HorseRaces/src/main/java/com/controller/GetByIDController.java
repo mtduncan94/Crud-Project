@@ -38,7 +38,7 @@ public class GetByIDController {
                 + rd.getTrackName() + "'/></td>");
         out.write("<td><input type='text' name='length' id='length' value='" + rd.getRaceDate() + "'/></td>");
         out.write("</tr>");
-        out.write("</table></form></html>");
+        out.write("</table></form><br><form action = 'index.jsp'><input type='submit' value= 'Go Home' /></form></html>");
     }
 
 }
