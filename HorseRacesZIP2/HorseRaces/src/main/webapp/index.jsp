@@ -26,8 +26,8 @@
     <body>
         <h1>Race Assistant</h1>
         <h2>Show Races:</h2>
-        
-      
+
+
         <form  action="show">
 
             <input type="submit" value =" All Races" />
