@@ -23,14 +23,15 @@ public class GetByIDController {
         RaceDetails rd = dao.getRace(id);
         PrintWriter out = response.getWriter();
 
-        out.write("<html><h1>Showing Races For ID: " + id + "</h1><table>");
-        out.write("<tr><th><input type='text' name='ID' id='itemIdTitle' value='ID' readonly /></th>");
+        out.write("<html><style> body{ background-color: gray}"
+                +"table, th, td {border: 3px solid black;cellpadding:5;}</style><h1>Showing Races For ID: " + id + "</h1><table>");
+        out.write("<tr><th>ID</th>");
         out.write(
-                "<th><input type='text' name='Race Name' id='Race Name' value='Race Name' readonly /></th>");
-        out.write("<th><input type='text' name='Track Name' id='Track Name' value='Track Name' readonly /></th>");
-        out.write("<th><input type='text' name='Race Date' id='Race Date' value='Race Date' readonly /></th></tr>");
+                "<th>Race Name</th>");
+        out.write("<th>Track Name</th>");
+        out.write("<th>Race Date</th></tr>");
         out.write(
-                "<tr><td><input type='text' name='itemId' id='itemId' value='" + id + "'/></td>");
+                "<tr><td><input size = '7' type='text' name='itemId' id='itemId' value='" + id + "'/></td>");
         out.write("<td><input type='text' name='description' id='description' value='"
                 + rd.getRaceName() + "'/></td>");
         out.write("<td><input type='text' name='description' id='description' value='"
