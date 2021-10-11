@@ -1,0 +1,95 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Race Assistant</title>
+        <style>
+            body{
+                background-color: gray
+            }
+            h1 {
+                font-size:60px;
+                color: red;
+                background-color: black;
+                text-align: center;
+                font-family:papyrus,fantasy;
+            }
+            table, th, td {
+                border: 3px solid black;
+                cellpadding:5;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Race Assistant</h1>
+        <h2>Show Races:</h2>
+
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>ID</th>
+                <th>Race Name</th>
+                <th>Track Name</th>
+                <th>Race Name</th>
+                <th>Action</th>
+            </tr>
+
+            <tr th:each="Race: ${raceList}">
+
+                <td th:text="${Race.ID}" />
+                <td th:text="${Race.racename}" />
+                <td th:text="${Race.trackname}" /> 
+                <td th:text="${Race.racedate}" />
+                <td> <a href="edit?id=${Race.id}">Edit</a>
+                    &nbsp;&nbsp;
+                    <a href="delete?id=${Race.id}">Delete</a>
+                </td> 
+            </tr>
+        </table>
+        <br></br>
+            <form action = "get"><input type="number" name="ID" required=''/><input type= "submit" value="Find by ID"/></form>
+            <h2>Add New Race: </h2>
+            <form action = "addrace">
+                <table >
+                    <tr>
+                        <th>Race Name</th>
+                        <th>Track Name</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+
+                    <tr>
+                        <td><input type="text" name="raceName" id="raceName" required=''/></td>>
+                        <td><input type="text" name="trackName" id="trackName" required=''/></td>
+                        <td><input type="date" name="date" id="date" required=''/></td>
+                                    <td>  <input type="submit" value ="Submit New Race" /></td>
+                                    </tr>
+                                    </table>
+                                    </form>
+                                    <h2>Update Existing Race: </h2>
+                                    <form action= "update" >
+                                        <table  >
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Race Name</th>
+                                                <th>Track Name</th>
+                                                <th>Date</th>
+                                                <th>Action</th>
+                                            </tr>
+
+                                            <tr>
+                                                <td><input type="number" name="ID" id="ID"  required=''/></td>
+                                                    <td><input type="text" name="raceName" id="raceName" required=''/></td>
+                                                    <td><input type="text" name="trackName" id="trackName" required=''/></td>
+                                                    <td><input type="date" name="date" id="date" required=''/></td>
+                                                                <td><input type="submit" value="Update Race List"/></td>
+                                                                </tr>
+                                                                </table>
+
+                                                                </form>	
+                                                                <h2>Delete Race By ID: </h2>
+                                                                <form action ="delete">
+                                                                    <input type="number" name= "ID" required=''/><input type="submit" value="Delete Race"/>
+                                                                </form>
+                                                                </body>
+                                                                </html>
