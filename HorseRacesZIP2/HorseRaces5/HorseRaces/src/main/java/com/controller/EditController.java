@@ -17,10 +17,10 @@ public class EditController {
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
     ModelAndView editRace(HttpServletRequest request) {
-       int id = Integer.parseInt(request.getParameter("ID"));
-       RaceDetails rd = dao.getRace(id);
-       ModelAndView model = new ModelAndView("RaceForm");
-        model.addObject("rd",rd);
+        int id = Integer.parseInt(request.getParameter("ID"));
+        RaceDetails rd = dao.getRace(id);
+        ModelAndView model = new ModelAndView("RaceForm");
+        model.addObject("rd", rd);
         return model;
     }
 }
