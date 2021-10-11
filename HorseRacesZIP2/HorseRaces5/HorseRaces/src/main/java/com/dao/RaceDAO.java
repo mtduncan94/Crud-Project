@@ -40,14 +40,13 @@ public class RaceDAO {
     }
 
     public void addOrEdit(RaceDetails rd) {
-        if(rd.getID()>0){
-        String updateString = "update race set raceName=?,trackName=?,raceDate=? where ID= ? ";
-        template.update(updateString, rd.getRaceName(), rd.getTrackName(), rd.getRaceDate(), rd.getID());
-        }
-        else{
-        String addItem = "insert into race values (default,'" + rd.getRaceName() + "','"
-                + rd.getTrackName() + "','" + rd.getRaceDate() + "')";
-        template.update(addItem);
+        if (rd.getID() > 0) {
+            String updateString = "update race set raceName=?,trackName=?,raceDate=? where ID= ? ";
+            template.update(updateString, rd.getRaceName(), rd.getTrackName(), rd.getRaceDate(), rd.getID());
+        } else {
+            String addItem = "insert into race values (default,'" + rd.getRaceName() + "','"
+                    + rd.getTrackName() + "','" + rd.getRaceDate() + "')";
+            template.update(addItem);
         }
     }
 
