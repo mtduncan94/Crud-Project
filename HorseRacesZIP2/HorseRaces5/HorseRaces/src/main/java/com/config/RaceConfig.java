@@ -9,13 +9,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-
 @Configuration
 @ComponentScan("com.controller")
 @EnableWebMvc
-public class RaceConfig implements WebMvcConfigurer  {
+public class RaceConfig implements WebMvcConfigurer {
 
-    
     @Bean
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -27,19 +25,17 @@ public class RaceConfig implements WebMvcConfigurer  {
         return dataSource;
     }
 
-   @Bean
-   public ViewResolver getViewResolver(){
-       InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+    @Bean
+    public ViewResolver getViewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/views/");
-       resolver.setSuffix(".jsp");
-       return resolver;
-   }
-   
-   
+        resolver.setSuffix(".jsp");
+        return resolver;
+    }
+
     @Bean
     public RaceDAO getRaceDAO() {
         return new RaceDAO(getDataSource());
     }
-
 
 }
