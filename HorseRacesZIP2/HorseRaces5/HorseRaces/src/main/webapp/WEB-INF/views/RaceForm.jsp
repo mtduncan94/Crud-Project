@@ -33,7 +33,7 @@
 		</tr>	
 		<tr>
 			<th>Race Date:</th>
-			<td><form:input path="raceDate"/></td>
+			<td><form:input type = "date" path="raceDate"/></td>
 		</tr>
 		<tr>
 		<td colspan = "2" align = "center"><input type="submit" value = "Save"/></td>
