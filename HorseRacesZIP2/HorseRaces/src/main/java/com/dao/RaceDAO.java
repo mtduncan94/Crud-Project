@@ -23,7 +23,7 @@ public class RaceDAO {
     }
 
     public List<RaceDetails> showAll() throws SQLException {
-        String sql = "select * from race";
+        String sql = "select * from race;";
         List<RaceDetails> allRaces = template.query(sql, new RowMapper<RaceDetails>() {
             @Override
             public RaceDetails mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -39,22 +39,21 @@ public class RaceDAO {
         return allRaces;
     }
 
-    public void addRace(RaceDetails rd) {
-
+    public void addOrEdit(RaceDetails rd) {
+        if(rd.getID()>0){
+        String updateString = "update race set raceName=?,trackName=?,raceDate=? where ID= ? ";
+        template.update(updateString, rd.getRaceName(), rd.getTrackName(), rd.getRaceDate(), rd.getID());
+        }
+        else{
         String addItem = "insert into race values (default,'" + rd.getRaceName() + "','"
                 + rd.getTrackName() + "','" + rd.getRaceDate() + "')";
         template.update(addItem);
+        }
     }
 
     public void deleteRace(int ID) {
         String sql = "delete from race where ID=?";
         template.update(sql, ID);
-
-    }
-
-    public void updateRace(RaceDetails rb) {
-        String updateString = "update race set raceName=?,trackName=?,raceDate=? where ID= ? ";
-        template.update(updateString, rb.getRaceName(), rb.getTrackName(), rb.getRaceDate(), rb.getID());
 
     }
 

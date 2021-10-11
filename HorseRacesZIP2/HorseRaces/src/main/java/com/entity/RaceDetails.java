@@ -9,11 +9,11 @@ public class RaceDetails {
     private String trackName;
     private String raceDate;
 
-    public RaceDetails(int ID, String raceName, String trackName, String racedate) {
+    public RaceDetails(int ID, String raceName, String trackName, String raceDate) {
         this.ID = ID;
         this.raceName = raceName;
         this.trackName = trackName;
-        this.raceDate = racedate;
+        this.raceDate = raceDate;
     }
 
     public RaceDetails() {
