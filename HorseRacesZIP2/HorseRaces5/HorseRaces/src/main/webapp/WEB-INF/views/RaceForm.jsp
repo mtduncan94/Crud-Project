@@ -19,7 +19,7 @@
 </head>
 <body>
 	<div align = "center">
-	<h1>Edit Contact</h1>
+	<h1>Edit Race</h1>
 	<form:form action = "save" method="post" modelAttribute="rd">
 		<table>
 		<form:hidden path="ID"/>

@@ -22,8 +22,8 @@
             }
         </style>
     </head>
-    <div align = "center">
-        <body>
+    <body>
+        <div align = "center">
             <h1>Race Assistant</h1>
             <h2>All Races:</h2>
 
@@ -39,13 +39,13 @@
                 <c:forEach var="Race" items= "${raceList}">
                     <tr>
                         <td>${Race.ID}</td>
-                        <td><a href="edit?ID=${Race.ID}">${Race.raceName}</a></td> 
+                        <td><a title="Click For Details" href="get?ID=${Race.ID}">${Race.raceName}</a></td> 
                         <td>${Race.trackName}</td> 
                         <td>${Race.raceDate}</td>
 
-                        <td> <a href="edit?ID=${Race.ID}">Edit</a>
+                        <td> <a href="edit?ID=${Race.ID}" title="Click To Edit Race">Edit</a>
                             &nbsp;&nbsp;
-                            <a href="delete?ID=${Race.ID}">Delete</a>
+                            <a href="delete?ID=${Race.ID}" title="Click To Delete">Delete</a>
                         </td> 
                     </tr>
                 </c:forEach>
@@ -63,13 +63,16 @@
                     </tr>
 
                     <tr>
-                        <td><input type="text" name="raceName" id="raceName" required/>
-                        <td><input type="text" name="trackName" id="trackName" required/>
-                        <td><input type="date" name="raceDate" id="raceDate" required/>
-                        <td>  <input type="submit" value ="Submit New Race" /></td>
+                        <td><input type="text" name="raceName" id="raceName" required="" title="Enter Race Name" oninvalid="setCustomValidity('Please Enter Race Name ')" onchange="try{setCustomValidity('')}catch(e){}"/>
+         
+                        <td><input type="text" name="trackName" id="trackName" required="" title="Enter Track Name" oninvalid="setCustomValidity('Please Enter Track Name ')" onchange="try{setCustomValidity('')}catch(e){}"/>
+            
+                        <td><input type="date" name="raceDate" id="raceDate" required="" title="Enter Race Date" oninvalid="setCustomValidity('Please Enter Race Date ')" onchange="try{setCustomValidity('')}catch(e){}"/>
+                        
+                        <td><input type="submit" value ="Submit New Race" /></td>
                     </tr>
                 </table>
             </form>
-        </body>
-    </div>
+        </div>
+    </body>
 </html>>
