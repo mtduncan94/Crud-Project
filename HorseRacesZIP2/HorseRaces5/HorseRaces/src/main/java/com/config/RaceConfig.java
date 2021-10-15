@@ -20,7 +20,7 @@ public class RaceConfig implements WebMvcConfigurer {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://bmlx3df4ma7r1yh4.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/r7qbm3iper7c071g");
         dataSource.setUsername("hafel2tqe526iemz");
-        dataSource.setPassword("jv9y1qct7nct628a");
+        dataSource.setPassword("aip54tzk6j9x1eqr");
 
         return dataSource;
     }
